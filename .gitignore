@@ -1,3 +1,7 @@
+# Next.js
+/.next/
+/out/
+
 # Nestjs specific
 /dist
 /node_modules
