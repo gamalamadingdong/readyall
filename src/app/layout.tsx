@@ -50,6 +50,9 @@ function Header() {
           <a href="/docs" className="hover:text-neutral-950 dark:hover:text-white">
             Resources
           </a>
+          <a href="/auth" className="hover:text-neutral-950 dark:hover:text-white">
+            Sign In
+          </a>
           <a
             href={process.env.NEXT_PUBLIC_LC_URL || "https://log.train-better.app"}
             className="rounded-md border border-neutral-300 bg-white px-4 py-2 text-neutral-900 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800"

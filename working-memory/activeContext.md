@@ -10,6 +10,8 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Next.js 16 App Router + TypeScript + TailwindCSS
 - 10 routes: `/`, `/products`, `/athletes`, `/coaches`, `/community`, `/docs`, `/roadmap`, `/feedback`, `/support`, `/_not-found`
 - Home, Products, Coaches pages now have upgraded messaging + clearer CTA language
+- Unified auth entry route `/auth` redirects to LC login with validated `returnTo`
+- Auth redirect allowlist includes new production domains and temporary legacy LC Vercel domain
 - Shared type convention: `src/lib/types/` (database, shared, supabase, barrel)
 - Supabase client wired (needs `.env` with real keys)
 - `.env.example` with all expected vars
@@ -26,7 +28,8 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - [ ] Add baseline Hub analytics events for key CTAs (`open_logbook`, `open_erglink`, `open_docs`, `open_feedback`)
 - [ ] Add `next/link` navigation (replace `<a>` tags for internal links)
 - [ ] Mobile-responsive nav (hamburger menu)
-- [ ] Unified auth execution (planned in `working-memory/unified-auth-plan.md`)
+- [x] Unified auth execution (Phase 1 foundation): Hub `/auth` route + LC `returnTo` contract
+- [ ] Unified auth hardening: add loop protection and telemetry events
 
 ### Blockers
 - None currently
