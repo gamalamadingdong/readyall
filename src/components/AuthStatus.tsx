@@ -1,71 +1,26 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/types/supabase';
 
-type AuthStatusState = {
-  hasSupabaseUser: boolean;
-  hasAuthHint: boolean;
-};
-
-const AUTH_HINT_STORAGE_KEY = 'readyall_auth_hint';
-
-function readAuthHintFromStorage(): boolean {
-  if (typeof window === 'undefined') return false;
-  return window.localStorage.getItem(AUTH_HINT_STORAGE_KEY) === 'true';
-}
-
-function writeAuthHintToStorage(value: boolean) {
-  if (typeof window === 'undefined') return;
-  if (value) {
-    window.localStorage.setItem(AUTH_HINT_STORAGE_KEY, 'true');
-  } else {
-    window.localStorage.removeItem(AUTH_HINT_STORAGE_KEY);
-  }
-}
-
-function consumeAuthHintFromQuery(): boolean {
-  if (typeof window === 'undefined') return false;
-
-  const url = new URL(window.location.href);
-  const authState = url.searchParams.get('authState');
-  if (authState !== 'signedIn') return false;
-
-  url.searchParams.delete('authState');
-  window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
-  return true;
-}
-
 export function AuthStatus() {
-  const [state, setState] = useState<AuthStatusState>({
-    hasSupabaseUser: false,
-    hasAuthHint: false,
-  });
+  const [hasSupabaseUser, setHasSupabaseUser] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
 
     const initialize = async () => {
-      const queryHint = consumeAuthHintFromQuery();
-      const storedHint = readAuthHintFromStorage();
-
       const { data } = await supabase.auth.getUser();
-      const hasSupabaseUser = Boolean(data.user);
-
-      const hasAuthHint = hasSupabaseUser ? false : queryHint || storedHint;
-      writeAuthHintToStorage(hasAuthHint);
+      const nextHasSupabaseUser = Boolean(data.user);
 
       if (!isMounted) return;
-      setState({ hasSupabaseUser, hasAuthHint });
+      setHasSupabaseUser(nextHasSupabaseUser);
     };
 
     void initialize();
 
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
-      const hasSupabaseUser = Boolean(session?.user);
-      const nextHint = hasSupabaseUser ? false : readAuthHintFromStorage();
-      writeAuthHintToStorage(nextHint);
-      setState({ hasSupabaseUser, hasAuthHint: nextHint });
+      setHasSupabaseUser(Boolean(session?.user));
     });
 
     return () => {
@@ -74,21 +29,11 @@ export function AuthStatus() {
     };
   }, []);
 
-  const hasHubSession = useMemo(() => state.hasSupabaseUser, [state.hasSupabaseUser]);
-
-  if (hasHubSession) {
+  if (hasSupabaseUser) {
     return (
       <span className="text-xs text-emerald-700 dark:text-emerald-400">
         Signed In
       </span>
-    );
-  }
-
-  if (state.hasAuthHint) {
-    return (
-      <a href="/auth" className="text-xs text-amber-700 hover:text-amber-800 dark:text-amber-400 dark:hover:text-amber-300">
-        Complete Sign In
-      </a>
     );
   }
 

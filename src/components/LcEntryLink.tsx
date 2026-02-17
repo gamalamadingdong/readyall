@@ -8,13 +8,7 @@ type LcEntryLinkProps = {
   children: React.ReactNode;
 };
 
-const AUTH_HINT_STORAGE_KEY = 'readyall_auth_hint';
 const DEFAULT_LC_BASE = 'https://logbook.train-better.app';
-
-function isSignedInHintPresent(): boolean {
-  if (typeof window === 'undefined') return false;
-  return window.localStorage.getItem(AUTH_HINT_STORAGE_KEY) === 'true';
-}
 
 function normalizeLcBase(url: string): string {
   return url.endsWith('/') ? url.slice(0, -1) : url;
@@ -34,18 +28,16 @@ export function LcEntryLink({ className, children }: LcEntryLinkProps) {
     const initialize = async () => {
       const { data } = await supabase.auth.getUser();
       const hasUser = Boolean(data.user);
-      const hasHint = isSignedInHintPresent();
 
       if (!isMounted) return;
-      setIsSignedIn(hasUser || hasHint);
+      setIsSignedIn(hasUser);
     };
 
     void initialize();
 
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
       const hasUser = Boolean(session?.user);
-      const hasHint = isSignedInHintPresent();
-      setIsSignedIn(hasUser || hasHint);
+      setIsSignedIn(hasUser);
     });
 
     return () => {
