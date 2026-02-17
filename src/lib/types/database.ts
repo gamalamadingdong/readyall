@@ -123,6 +123,28 @@ export type Database = {
         Args: { required_role: string };
         Returns: boolean;
       };
+      create_sso_handoff: {
+        Args: {
+          p_source_app: string;
+          p_target_app: string;
+          p_return_to?: string | null;
+          p_ttl_seconds?: number;
+        };
+        Returns: string;
+      };
+      consume_sso_handoff: {
+        Args: {
+          p_token: string;
+          p_expected_target: string;
+          p_consumer_user_id?: string | null;
+        };
+        Returns: {
+          initiator_user_id: string;
+          source_app: string;
+          target_app: string;
+          requested_return_to: string | null;
+        }[];
+      };
     };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;

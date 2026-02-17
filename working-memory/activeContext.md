@@ -39,6 +39,9 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Feedback board auth UX now distinguishes real Hub session from app handoff hint: anonymous users remain read-only, and users with only auth hint are prompted to complete sign-in before write actions
 - Roadmap page now includes a dedicated strategic-areas component (`StrategicRoadmap`) outlining major tracks, current status (Active/Next/Planned), and now/next intent per area
 - Training & Physiology page reordered for concept progression: Physiology foundations (Energy Systems first) now precede Zones & Pacing, followed by Power Profile and Planning
+- Hub auth route `/auth` now uses a native ReadyAll Supabase sign-in form (`HubAuthForm`) instead of redirecting to LC login, so Hub write actions depend on and create a real Hub-origin session
+- Began cross-app SSO foundation: added Supabase `sso_handoffs` table + `create_sso_handoff` / `consume_sso_handoff` RPCs for one-time Hub↔LC bootstrap handoffs; implementation contract documented in `working-memory/sso-handoff-contract.md`
+- Implemented Hub-side SSO bootstrap route `/auth/bootstrap` (`HubSsoBootstrap`) that accepts one-time `ssoToken` + source session tokens (URL hash), sets Hub session, consumes handoff, and redirects to safe `returnTo`
 - Access policy clarified across public surfaces: reading resources/roadmap/backlog is public; login gates participation actions (voting/prioritization)
 - Navigation now labels `/docs` explicitly as "Docs" for clearer discoverability
 - IA simplified for depth-first docs: top-level nav now removes Athletes/Coaches/RWN links, keeping Home + Apps + Docs + Community as primary discovery surfaces

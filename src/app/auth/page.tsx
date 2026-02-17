@@ -1,73 +1,23 @@
-import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
+import { HubAuthForm } from '@/components/HubAuthForm';
 
 type AuthPageProps = {
   searchParams: Promise<{
     returnTo?: string;
-    authFlowId?: string;
-    authHop?: string;
   }>;
 };
 
-function normalizeReturnTo(raw: string | undefined): string {
-  const hubBase = process.env.NEXT_PUBLIC_HUB_URL || 'https://readyall.org';
-
-  if (!raw) {
-    return `${hubBase}/`;
-  }
-
-  if (raw.startsWith('/')) {
-    if (raw.startsWith('/auth') || raw.startsWith('/login')) {
-      return `${hubBase}/`;
-    }
-    return `${hubBase}${raw}`;
-  }
-
-  try {
-    const target = new URL(raw);
-    const allowedOrigins = new Set<string>([
-      new URL(hubBase).origin,
-      'https://readyall.org',
-      'https://www.readyall.org',
-      'https://logbook.readyall.org',
-      'https://logbook.train-better.app',
-      'https://logbook-companion.vercel.app',
-    ]);
-
-    const lcUrl = process.env.NEXT_PUBLIC_LC_URL;
-    if (lcUrl) {
-      allowedOrigins.add(new URL(lcUrl).origin);
-    }
-
-    if (allowedOrigins.has(target.origin)) {
-      if (target.pathname.startsWith('/auth') || target.pathname.startsWith('/login')) {
-        return `${hubBase}/`;
-      }
-      return target.toString();
-    }
-  } catch {
-    return `${hubBase}/`;
-  }
-
-  return `${hubBase}/`;
-}
+export const metadata: Metadata = {
+  title: 'Sign In — ReadyAll',
+  description: 'Sign in to participate in ReadyAll community workflows.',
+};
 
 export default async function AuthPage({ searchParams }: AuthPageProps) {
   const params = await searchParams;
-  const currentHop = Number.parseInt(params.authHop ?? '0', 10);
 
-  if (Number.isFinite(currentHop) && currentHop >= 3) {
-    redirect((process.env.NEXT_PUBLIC_HUB_URL || 'https://readyall.org') + '/?authError=loop');
-  }
-
-  const returnTo = normalizeReturnTo(params.returnTo);
-  const lcBase = process.env.NEXT_PUBLIC_LC_URL || 'https://logbook.readyall.org';
-  const loginUrl = new URL('/login', lcBase);
-  const authFlowId = params.authFlowId ?? `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
-
-  loginUrl.searchParams.set('returnTo', returnTo);
-  loginUrl.searchParams.set('authSource', 'hub');
-  loginUrl.searchParams.set('authFlowId', authFlowId);
-  loginUrl.searchParams.set('authHop', String((Number.isFinite(currentHop) ? currentHop : 0) + 1));
-
-  redirect(loginUrl.toString());
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-16">
+      <HubAuthForm returnTo={params.returnTo} />
+    </div>
+  );
 }
