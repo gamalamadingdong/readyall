@@ -74,13 +74,21 @@ export function AuthStatus() {
     };
   }, []);
 
-  const isSignedIn = useMemo(() => state.hasSupabaseUser || state.hasAuthHint, [state.hasSupabaseUser, state.hasAuthHint]);
+  const hasHubSession = useMemo(() => state.hasSupabaseUser, [state.hasSupabaseUser]);
 
-  if (isSignedIn) {
+  if (hasHubSession) {
     return (
       <span className="text-xs text-emerald-700 dark:text-emerald-400">
-        {state.hasSupabaseUser ? 'Signed In' : 'Signed In (via App)'}
+        Signed In
       </span>
+    );
+  }
+
+  if (state.hasAuthHint) {
+    return (
+      <a href="/auth" className="text-xs text-amber-700 hover:text-amber-800 dark:text-amber-400 dark:hover:text-amber-300">
+        Complete Sign In
+      </a>
     );
   }
 
