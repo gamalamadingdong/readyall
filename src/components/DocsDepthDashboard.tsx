@@ -25,7 +25,7 @@ const statusLabelMap: Record<DepthStatus, string> = {
 };
 
 export function DocsDepthDashboard({
-  title = 'Docs depth dashboard',
+  title = 'Documentation Progress',
   description = 'We are building one section at a time. RWN is complete; Training & Physiology is the active expansion track.',
 }: {
   title?: string;

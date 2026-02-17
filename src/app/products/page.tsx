@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LcEntryLink } from "@/components/LcEntryLink";
 
 export const metadata: Metadata = {
   title: "Apps — ReadyAll",
@@ -38,12 +39,9 @@ export default function ProductsPage() {
             <li>Template-based workout categorization and repeatable programming</li>
             <li>Athlete + coach workflows with roster-aware team management</li>
           </ul>
-          <a
-            href={process.env.NEXT_PUBLIC_LC_URL || "https://logbook.train-better.app"}
-            className="mt-4 inline-block rounded-md bg-indigo-600 px-6 py-2 text-white hover:bg-indigo-700"
-          >
+          <LcEntryLink className="mt-4 inline-block rounded-md bg-indigo-600 px-6 py-2 text-white hover:bg-indigo-700">
             Open Logbook Companion →
-          </a>
+          </LcEntryLink>
         </section>
 
         <section id="erglink">

@@ -39,11 +39,15 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Refined messaging across README/Home/Community to emphasize ReadyAll as an open rowing resource commons: free learning, global resource curation, and enthusiast-led contribution on top of existing knowledge
 - Updated Home page RWN pathway links to point directly to `/rwn` (readyall.org/rwn) instead of docs anchors for clearer user navigation
 - Expanded `/rwn` into a more comprehensive reference aligned with Logbook Companion docs/playground patterns: deeper syntax/guidance sections, canonical naming behavior notes, common authoring mistakes, and a new interactive playground-style example explorer component
+- Integrated `/rwn` with an LC-style two-mode workflow (`Specification Guide` + `Interactive Playground`) so ReadyAll now mirrors Logbook Companion’s docs interaction pattern instead of a single long-form static reference
 - Refactored `/docs` away from broad low-value card coverage into two depth-first sections: `RWN` (complete) and `Training & Physiology` (active expansion), with significantly richer pacing/zones/power-duration/periodization content and external detailed-plan links
 - Split docs architecture into a concise `/docs` index plus dedicated `/training-physiology` page; updated Home/dashboard links to route to `/rwn` and `/training-physiology` rather than removed docs anchors
 - Added a sticky in-page sub-navigation on `/training-physiology` (Zones, Pacing, Power-Duration, Planning) to improve long-form docs navigation
 - Aligned ReadyAll theming behavior with LC model: added `system` theme preference, resolved-theme application with OS preference listener, and hardened DB persistence of `user_profiles.preferences.theme` via upsert
 - Added Hub auth-status visibility after LC round-trip: new header `AuthStatus` component checks Supabase user and an `authState=signedIn` handoff hint, so the UI no longer remains static on "Sign In" after successful redirect flow
+- Products page LC CTA is now auth-aware: if signed in, link targets LC home (`/`); if not signed in, link targets LC public `about` page (`/about`)
+- Header `Open App` CTA now uses the same auth-aware LC routing logic as Products (signed in → `/`, signed out → `/about`) for consistent behavior site-wide
+- Docs index layout redesigned to remove redundancy and awkward "docs depth dashboard" wording: now framed as `Documentation Progress` + `Current Tracks` + `Future Expansion Model` + contribution CTAs, while preserving two-track depth-first architecture
 - Updated RWN validator CTA to deep-link into LC docs playground tab (`/docs?tab=rwn&rwnSubTab=playground`) once LC tab-linking support landed
 - RWN is now positioned as a docs-domain topic (linked from Docs/Home docs pathways) rather than a primary global nav destination
 - Legacy audience URLs `/athletes` and `/coaches` now redirect to Home to preserve continuity while reducing top-level IA complexity
