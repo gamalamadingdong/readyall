@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { LcEntryLink } from '@/components/LcEntryLink';
 
 type ExampleCategory = 'Basic' | 'Pace' | 'Advanced' | 'Multi-Modal';
 
@@ -126,12 +127,12 @@ export function RwnPlaygroundPreview() {
             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">Selected Pattern</p>
             <p className="mt-1 text-xs font-mono text-neutral-700 dark:text-neutral-300">{selected.value}</p>
           </div>
-          <a
-            href={`${process.env.NEXT_PUBLIC_LC_URL || 'https://logbook.train-better.app'}/docs?tab=rwn&rwnSubTab=playground`}
+          <LcEntryLink
+            returnTo="/docs?tab=rwn&rwnSubTab=playground"
             className="inline-block rounded-md border border-neutral-300 px-3 py-2 text-xs font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900"
           >
             Open full validator in Logbook Companion
-          </a>
+          </LcEntryLink>
         </div>
       </div>
     </section>

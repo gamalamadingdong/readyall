@@ -7,6 +7,8 @@
 The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, TailwindCSS, and page stubs for all IA sections. Brand/domain messaging has been updated for ReadyAll (`readyall.org`) and core platform positioning is now explicit across Home, Products, Docs, Community, and Roadmap.
 
 ### What Exists
+- Hub now issues one-time SSO handoffs for outbound LC entry links via `LcEntryLink`: authenticated clicks call `create_sso_handoff('hub','lc', returnTo, 120)` and redirect to LC `/auth/bootstrap` with source session hash payload; unauthenticated/failure paths gracefully fall back to direct LC links. Coverage includes header Open App CTA, Home primary Open Logbook Companion CTA, and RWN validator deep-link CTAs (`/docs?tab=rwn&rwnSubTab=playground`).
+- Shared LC fallback domain in `src/lib/types/shared.ts` aligned to `https://logbook.readyall.org` for current domain conventions.
 - Next.js 16 App Router + TypeScript + TailwindCSS
 - 10 routes: `/`, `/products`, `/athletes`, `/coaches`, `/community`, `/docs`, `/roadmap`, `/feedback`, `/support`, `/_not-found`
 - Home, Products, Docs, Community, and Roadmap reflect ReadyAll positioning and transparency model

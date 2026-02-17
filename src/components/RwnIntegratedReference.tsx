@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { RwnPlaygroundPreview } from '@/components/RwnPlaygroundPreview';
+import { LcEntryLink } from '@/components/LcEntryLink';
 
 type RwnTab = 'spec' | 'playground';
 
@@ -62,12 +63,12 @@ export function RwnIntegratedReference() {
               Start with an example, adjust notation, then open the full Logbook Companion validator for
               parser diagnostics, canonical naming, and structured output.
             </p>
-            <a
-              href={`${process.env.NEXT_PUBLIC_LC_URL || 'https://logbook.readyall.org'}/docs?tab=rwn&rwnSubTab=playground`}
+            <LcEntryLink
+              returnTo="/docs?tab=rwn&rwnSubTab=playground"
               className="mt-4 inline-block rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900"
             >
               Open full validator in Logbook Companion
-            </a>
+            </LcEntryLink>
           </section>
         </>
       ) : (

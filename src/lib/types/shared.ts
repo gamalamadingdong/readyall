@@ -18,7 +18,7 @@ export type AppId = "lc" | "el" | "hub";
 
 /** Domain map for cross-app linking */
 export const APP_DOMAINS: Record<AppId, string> = {
-  lc: process.env.NEXT_PUBLIC_LC_URL || "https://log.train-better.app",
+  lc: process.env.NEXT_PUBLIC_LC_URL || "https://logbook.readyall.org",
   el: process.env.NEXT_PUBLIC_EL_URL || "https://erg.train-better.app",
   hub: process.env.NEXT_PUBLIC_HUB_URL || "https://train-better.app",
 };
