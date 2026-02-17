@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { RwnPlaygroundPreview } from "@/components/RwnPlaygroundPreview";
 
 export const metadata: Metadata = {
   title: "RWN — ReadyAll",
   description:
-    "Rowing Workout Notation reference for syntax, parser capabilities, and practical examples from Logbook Companion.",
+    "Comprehensive Rowing Workout Notation reference with syntax, parser behavior, canonical naming guidance, and playground-style examples.",
 };
 
 type ExampleCategory = "Basic" | "Pace" | "Advanced" | "Multi-Modal";
@@ -34,10 +35,20 @@ export default function RwnPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-semibold tracking-tight">Rowing Workout Notation (RWN)</h1>
       <p className="mt-4 max-w-4xl text-neutral-600 dark:text-neutral-400">
-        This page documents the actual notation features currently implemented in Logbook Companion
-        parsing and validation logic. It is the working reference for how workouts are authored,
-        interpreted, and normalized across athlete, coach, and team workflows.
+        RWN is a shared language for writing workouts clearly, reusing them consistently,
+        and preserving intent across athletes, coaches, and tools. This reference mirrors
+        the depth of the Logbook Companion documentation + playground workflow.
       </p>
+
+      <section className="tb-soft-card mt-8 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+        <h2 className="text-xl font-semibold">Why RWN Exists</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-600 dark:text-neutral-300">
+          <li>Write once, interpret consistently across planning and execution contexts.</li>
+          <li>Reduce ambiguity in sessions (especially rest, pace, and rate guidance).</li>
+          <li>Enable canonical naming, parsing, and reusable template workflows.</li>
+          <li>Keep workouts human-readable while still machine-parseable.</li>
+        </ul>
+      </section>
 
       <section className="tb-soft-card mt-8 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
         <h2 className="text-xl font-semibold">Syntax Modes</h2>
@@ -45,7 +56,32 @@ export default function RwnPage() {
           <li>Preferred block tags: <span className="font-mono">[w]</span> warmup, <span className="font-mono">[c]</span> cooldown, <span className="font-mono">[t]</span> test.</li>
           <li>Legacy inline tags still supported: <span className="font-mono">#warmup</span>, <span className="font-mono">#cooldown</span>, <span className="font-mono">#test</span>.</li>
           <li>Standard separators: <span className="font-mono">+</span> for chained segments, <span className="font-mono">/</span> for rest pairing, and <span className="font-mono">x</span> for repeats.</li>
+          <li>Guidance marker: <span className="font-mono">@</span> for pace/rate/zone targets and ranges.</li>
         </ul>
+      </section>
+
+      <section className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="tb-soft-card rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+          <h2 className="text-xl font-semibold">Unit Forms</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-600 dark:text-neutral-300">
+            <li>Distance: <span className="font-mono">2000m</span></li>
+            <li>Time: <span className="font-mono">30:00</span> (or second-based parser inputs)</li>
+            <li>Calories: <span className="font-mono">500cal</span> or <span className="font-mono">500c</span></li>
+            <li>Rest suffix: <span className="font-mono">1:00r</span></li>
+          </ul>
+        </div>
+
+        <div className="tb-soft-card rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+          <h2 className="text-xl font-semibold">Guidance Forms</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-600 dark:text-neutral-300">
+            <li>Rate: <span className="font-mono">@r20</span> or <span className="font-mono">@20spm</span></li>
+            <li>Rate range: <span className="font-mono">@18..22spm</span> or <span className="font-mono">@r20-24</span></li>
+            <li>Pace: <span className="font-mono">@2:05</span></li>
+            <li>Pace range: <span className="font-mono">@2:05..2:10</span></li>
+            <li>Relative pace: <span className="font-mono">@2k+10</span>, <span className="font-mono">@5k-2</span></li>
+            <li>Zones: <span className="font-mono">@UT2</span>, <span className="font-mono">@UT1</span>, <span className="font-mono">@AT</span>, <span className="font-mono">@TR</span>, <span className="font-mono">@AN</span></li>
+          </ul>
+        </div>
       </section>
 
       <section className="mt-8 grid gap-6 md:grid-cols-2">
@@ -79,8 +115,25 @@ export default function RwnPage() {
           <li>Canonical workout naming from parsed interval structures.</li>
           <li>Duration and work estimation for supported component types.</li>
           <li>Legacy compatibility where possible while standardizing forward syntax.</li>
+          <li>Grouped-repeat parsing and unrolling behavior for nested set patterns.</li>
         </ul>
       </section>
+
+      <section className="tb-soft-card mt-8 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+        <h2 className="text-xl font-semibold">Canonical Naming Behavior</h2>
+        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+          Canonical names provide a deterministic label for parsed workouts so repeated structures
+          can be matched and analyzed consistently over time.
+        </p>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-600 dark:text-neutral-300">
+          <li><span className="font-mono">4x500m/1:00r</span> normalizes into a repeat-style canonical interval label.</li>
+          <li>Grouped structures preserve intent while still producing stable naming outputs.</li>
+          <li>Legacy notation can be interpreted, but block-tag style is preferred for forward consistency.</li>
+          <li>Guidance targets (rate/pace/zone) are preserved as execution metadata, not just display text.</li>
+        </ul>
+      </section>
+
+      <RwnPlaygroundPreview />
 
       <section className="tb-soft-card mt-8 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
         <h2 className="text-xl font-semibold">Reference Examples</h2>
@@ -107,11 +160,21 @@ export default function RwnPage() {
         </div>
       </section>
 
+      <section className="tb-soft-card mt-8 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+        <h2 className="text-xl font-semibold">Common Authoring Mistakes</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-600 dark:text-neutral-300">
+          <li>Mixing separators incorrectly (for example malformed repeats or rest delimiters).</li>
+          <li>Using inconsistent modality prefixes across one circuit expression.</li>
+          <li>Writing ambiguous pace/rate guidance that should be explicit ranges.</li>
+          <li>Relying on legacy inline tags where block tags provide clearer structure.</li>
+        </ul>
+      </section>
+
       <div className="tb-soft-card mt-10 rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
         <h2 className="text-xl font-semibold">Build with us</h2>
         <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-          Help prioritize the next RWN improvements: extended examples, edge-case clarifications,
-          and richer modality-specific guidance.
+          Help prioritize the next RWN improvements: edge-case clarifications,
+          richer modality guidance, and additional parser behavior documentation.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <a href="/feedback" className="rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">

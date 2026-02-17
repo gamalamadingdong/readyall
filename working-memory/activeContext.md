@@ -37,6 +37,8 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Added a shared "Docs depth dashboard" component on both Home and Docs to make section maturity visible at a glance and reinforce depth-over-breadth content strategy
 - Added top-level `README.md` documenting ReadyAll's community-first purpose, depth-over-breadth IA direction, docs-centered architecture, and contribution guidance
 - Refined messaging across README/Home/Community to emphasize ReadyAll as an open rowing resource commons: free learning, global resource curation, and enthusiast-led contribution on top of existing knowledge
+- Updated Home page RWN pathway links to point directly to `/rwn` (readyall.org/rwn) instead of docs anchors for clearer user navigation
+- Expanded `/rwn` into a more comprehensive reference aligned with Logbook Companion docs/playground patterns: deeper syntax/guidance sections, canonical naming behavior notes, common authoring mistakes, and a new interactive playground-style example explorer component
 - RWN is now positioned as a docs-domain topic (linked from Docs/Home docs pathways) rather than a primary global nav destination
 - Legacy audience URLs `/athletes` and `/coaches` now redirect to Home to preserve continuity while reducing top-level IA complexity
 - Roadmap now includes a "References" subsection linking to key KB and planning sources
