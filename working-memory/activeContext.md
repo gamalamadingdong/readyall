@@ -59,6 +59,8 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Unified auth entry route `/auth` redirects to LC login with validated `returnTo`
 - Auth redirect allowlist includes new production domains and temporary legacy LC Vercel domain
 - Loop protection in `/auth` via `authHop` threshold and unsafe auth-path guardrails
+- `/training-physiology` fully rewritten: color-coded zone cards with integrated pacing targets (pace/rate/volume share per zone, with a 2:00 example baseline), 80/20 volume distribution bar, pacing derivation callout, standalone pacing section removed, subnav updated (Zones & Pacing | Power Profile | Planning)
+- Power Profile section massively expanded: conceptual power curve bar chart, full anchor-ratio reference table (9 anchors from 1:00→HM with expected % of 2k watts + energy system + what-it-tests), 4 profile types (Sprinter/Diesel/Threshold Gap/Balanced) with training implications, deviation-from-expected illustrated bar chart (sprinter example), 3-step how-to-build guide, and why-it-matters comparison card (with vs without power profiling)
 - Shared type convention: `src/lib/types/` (database, shared, supabase, barrel)
 - Supabase client wired (needs `.env` with real keys)
 - `.env.example` with all expected vars
