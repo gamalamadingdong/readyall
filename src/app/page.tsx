@@ -5,15 +5,15 @@ export default function Home() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <section className="tb-soft-card rounded-2xl border border-neutral-200 bg-white px-8 py-12 dark:border-neutral-800 dark:bg-neutral-950">
         <p className="tb-accent-chip inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-          readyall.org · open training platform hub
+          readyall.org · open rowing community hub
         </p>
         <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          One hub for tools, knowledge, and community for people who row.
+          One open place to learn rowing from the world, together.
         </h1>
         <p className="mt-5 max-w-3xl text-lg text-neutral-600 dark:text-neutral-400">
-          ReadyAll brings together Logbook Companion, ErgLink, rowing workout
-          notation, workout templates, and coaching + roster management, plus a
-          growing knowledge base for training plans, physiology, and technique.
+          ReadyAll is a community resource commons that curates practical rowing
+          knowledge, links trusted sources, and helps athletes, coaches, and
+          enthusiasts build on what already exists.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -40,7 +40,7 @@ export default function Home() {
       <section className="mt-14 rounded-2xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-950">
         <h2 className="text-2xl font-semibold">Core platform pillars</h2>
         <p className="mt-3 max-w-3xl text-neutral-600 dark:text-neutral-400">
-          These are the core pieces we&apos;re prioritizing and expanding in public.
+          These are the core pieces we&apos;re curating and expanding in public with the community.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <a href="/products#logbook-companion" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
@@ -147,9 +147,9 @@ export default function Home() {
       <section className="mt-14 rounded-2xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-950">
         <h2 className="text-2xl font-semibold">Built in public, improved by the community</h2>
         <p className="mt-3 max-w-3xl text-neutral-600 dark:text-neutral-400">
-          Reading docs, roadmap, and backlog is public. Logged-in members can
-          vote on features and priorities so signals stay accountable while
-          transparency remains open.
+          Reading resources is free and open. Community members can help curate,
+          refine, and extend what&apos;s here so the best rowing knowledge becomes
+          easier for everyone to access and apply.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <a href="/community" className="rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">

@@ -10,9 +10,9 @@ export default function CommunityPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-bold">Community</h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        ReadyAll is built in public. Reading roadmap, backlog, and docs is open
-        to everyone; signed-in users can participate in prioritization and
-        contribute structured feedback.
+        ReadyAll is for building a community of rowing enthusiasts who learn
+        freely, share practical resources, and improve the knowledge base
+        together over time.
       </p>
 
       <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -51,6 +51,7 @@ export default function CommunityPage() {
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-neutral-600 dark:text-neutral-400">
             <li>Vote on roadmap and backlog priorities that affect daily coaching/training work.</li>
             <li>Request or refine documentation sections with concrete examples.</li>
+            <li>Contribute high-quality external resources and context on why they matter.</li>
             <li>Submit reproducible workflow reports: context, steps, expected outcome.</li>
             <li>Join community review loops for RWN, zones, and training progression guidance.</li>
           </ul>
@@ -59,10 +60,11 @@ export default function CommunityPage() {
         <section className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-6">
           <h2 className="text-lg font-semibold">Participation model</h2>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-neutral-600 dark:text-neutral-400">
+            <li>Resources stay open for everyone to read and learn from.</li>
             <li>Roadmap and backlog stay public, regardless of login status.</li>
             <li>Voting and prioritization actions are authenticated to keep signal quality high.</li>
             <li>Docs sections grow through request volume + demonstrated user need.</li>
-            <li>Implementation status remains visible through public issue tracking.</li>
+            <li>Implementation status and evolution remain visible through public issue tracking.</li>
           </ul>
         </section>
       </div>
