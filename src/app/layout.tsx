@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { AuthStatus } from "@/components/AuthStatus";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,9 +46,7 @@ function Header() {
           <a href="/docs" className="hover:text-neutral-950 dark:hover:text-white">
             Docs
           </a>
-          <a href="/auth" className="hover:text-neutral-950 dark:hover:text-white">
-            Sign In
-          </a>
+          <AuthStatus />
           <ThemeToggle />
           <a
             href={process.env.NEXT_PUBLIC_LC_URL || "https://logbook.train-better.app"}

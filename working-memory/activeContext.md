@@ -43,6 +43,7 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Split docs architecture into a concise `/docs` index plus dedicated `/training-physiology` page; updated Home/dashboard links to route to `/rwn` and `/training-physiology` rather than removed docs anchors
 - Added a sticky in-page sub-navigation on `/training-physiology` (Zones, Pacing, Power-Duration, Planning) to improve long-form docs navigation
 - Aligned ReadyAll theming behavior with LC model: added `system` theme preference, resolved-theme application with OS preference listener, and hardened DB persistence of `user_profiles.preferences.theme` via upsert
+- Added Hub auth-status visibility after LC round-trip: new header `AuthStatus` component checks Supabase user and an `authState=signedIn` handoff hint, so the UI no longer remains static on "Sign In" after successful redirect flow
 - Updated RWN validator CTA to deep-link into LC docs playground tab (`/docs?tab=rwn&rwnSubTab=playground`) once LC tab-linking support landed
 - RWN is now positioned as a docs-domain topic (linked from Docs/Home docs pathways) rather than a primary global nav destination
 - Legacy audience URLs `/athletes` and `/coaches` now redirect to Home to preserve continuity while reducing top-level IA complexity
