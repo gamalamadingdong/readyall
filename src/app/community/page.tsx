@@ -10,9 +10,9 @@ export default function CommunityPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-bold">Community</h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        ReadyAll is for building a community of rowing enthusiasts who learn
-        freely, share practical resources, and shape product and documentation
-        direction together over time.
+        ReadyAll community work is centered on three pillars: better data and
+        knowledge resources, better apps and tools, and better shared standards
+        like RWN.
       </p>
 
       <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -52,6 +52,7 @@ export default function CommunityPage() {
             <li>Submit roadmap and docs-depth requests directly in ReadyAll.</li>
             <li>Vote on priorities that affect daily coaching and training workflows.</li>
             <li>Request or refine documentation sections with concrete examples and edge cases.</li>
+            <li>Propose standards improvements (for example RWN syntax clarity and examples).</li>
             <li>Contribute high-quality external resources and context on why they matter.</li>
             <li>Submit reproducible workflow reports with context, steps, and expected outcome.</li>
             <li>Join review loops for RWN, zones, and progression guidance before major updates.</li>
@@ -66,6 +67,7 @@ export default function CommunityPage() {
             <li>Voting and prioritization actions are authenticated to keep signal quality high.</li>
             <li>New submissions are reviewed before publishing to keep quality and relevance high.</li>
             <li>Docs sections grow through request volume and demonstrated user need.</li>
+            <li>Standards evolve through practical review and parser-backed examples.</li>
             <li>Implementation progress can still be mirrored to public issues for engineering transparency.</li>
           </ul>
         </section>

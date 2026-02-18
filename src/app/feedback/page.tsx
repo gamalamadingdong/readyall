@@ -3,7 +3,7 @@ import { CommunityFeedbackBoard } from "@/components/CommunityFeedbackBoard";
 
 export const metadata: Metadata = {
   title: "Feedback — ReadyAll",
-  description: "Tell us what you need through ReadyAll-native community contribution flows.",
+  description: "Tell us what you need across ReadyAll's knowledge, apps/tools, and standards contribution flows.",
 };
 
 export default function FeedbackPage() {
@@ -11,22 +11,25 @@ export default function FeedbackPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-bold">Feedback</h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        We build what matters to you. Share ideas, bug reports, and documentation
-        depth requests through ReadyAll contribution flows. Reading is public;
-        writing actions require sign-in.
+        We build what matters to you. Share ideas, bug reports, and improvement
+        requests across all three ReadyAll pillars: data and knowledge, apps and
+        tools, and standards like RWN. Reading is public; writing actions require
+        sign-in.
       </p>
 
       <div className="mt-12 grid gap-8 md:grid-cols-2">
         <section className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-6">
           <h3 className="text-lg font-semibold">Report a Bug</h3>
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Submit reproducible workflow issues in ReadyAll so triage can be moderated and prioritized.
+            Submit reproducible workflow issues so triage can be moderated and
+            prioritized across docs, app flows, and standards tooling.
           </p>
         </section>
         <section className="rounded-lg border border-neutral-200 dark:border-neutral-800 p-6">
           <h3 className="text-lg font-semibold">Request a Feature</h3>
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-            Propose changes to apps, docs depth, or roadmap direction with context and expected outcome.
+            Propose changes to apps, docs depth, standards coverage, or roadmap
+            direction with clear context and expected outcome.
           </p>
         </section>
       </div>

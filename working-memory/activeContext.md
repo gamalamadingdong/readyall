@@ -55,6 +55,10 @@ The Hub repo is scaffolded with Next.js 16 (App Router), TypeScript strict, Tail
 - Updated Home page RWN pathway links to point directly to `/rwn` (readyall.org/rwn) instead of docs anchors for clearer user navigation
 - Expanded `/rwn` into a more comprehensive reference aligned with Logbook Companion docs/playground patterns: deeper syntax/guidance sections, canonical naming behavior notes, common authoring mistakes, and a new interactive playground-style example explorer component
 - Integrated `/rwn` with an LC-style two-mode workflow (`Specification Guide` + `Interactive Playground`) so ReadyAll now mirrors Logbook Companion’s docs interaction pattern instead of a single long-form static reference
+- Added a dedicated `Why RWN` section to `/rwn` specification mode to explain motivation and value (shared team language, parser-driven tooling, interoperability standard) with a clear informal-to-canonical example
+- Refined Home messaging to better reflect ReadyAll's three primary pillars: data/knowledge resources, apps/tools, and standards (RWN), including updated hero headline and supporting copy
+- Aligned cross-page communications language to the same three-pillar framing on `/docs`, `/community`, and `/products` so positioning is consistent across primary discovery surfaces
+- Extended three-pillar communications alignment to `/roadmap` and `/feedback` so planning and contribution copy now consistently references knowledge, apps/tools, and standards (RWN)
 - Refactored `/docs` away from broad low-value card coverage into two depth-first sections: `RWN` (complete) and `Training & Physiology` (active expansion), with significantly richer pacing/zones/power-duration/periodization content and external detailed-plan links
 - Split docs architecture into a concise `/docs` index plus dedicated `/training-physiology` page; updated Home/dashboard links to route to `/rwn` and `/training-physiology` rather than removed docs anchors
 - Added a sticky in-page sub-navigation on `/training-physiology` (Zones, Pacing, Power-Duration, Planning) to improve long-form docs navigation

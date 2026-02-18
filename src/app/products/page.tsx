@@ -3,7 +3,7 @@ import { LcEntryLink } from "@/components/LcEntryLink";
 
 export const metadata: Metadata = {
   title: "Apps — ReadyAll",
-  description: "Logbook Companion, ErgLink, rowing workout notation, templates, and coaching workflows.",
+  description: "ReadyAll apps and tools pillar: Logbook Companion, ErgLink, and shared systems linked to docs and standards.",
 };
 
 export default function ProductsPage() {
@@ -11,16 +11,16 @@ export default function ProductsPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-bold">Apps</h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        ReadyAll brings together two apps plus shared systems: Logbook
-        Companion, ErgLink, rowing workout notation, workout templates, and
-        coaching + roster management.
+        This is the apps and tools pillar of ReadyAll. Logbook Companion and
+        ErgLink connect with shared standards (RWN) and practical documentation
+        so training workflows stay consistent across planning and execution.
       </p>
 
       <div className="mt-6 rounded-lg border border-neutral-200 dark:border-neutral-800 p-5">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          Current emphasis: establish strong foundations for Logbook Companion,
-          RWN, coaching/team management, and ErgLink live sessions, then iterate
-          depth with community feedback.
+          Current emphasis: improve real-world utility first, then iterate with
+          community feedback across all three ReadyAll pillars: knowledge,
+          apps/tools, and standards.
         </p>
       </div>
 

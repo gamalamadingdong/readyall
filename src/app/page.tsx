@@ -9,12 +9,12 @@ export default function Home() {
           readyall.org · open rowing community hub
         </p>
         <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          One open place to learn rowing from the world, together.
+          An open rowing resource for knowledge, tools, and standards.
         </h1>
         <p className="mt-5 max-w-3xl text-lg text-neutral-600 dark:text-neutral-400">
-          ReadyAll is a community resource commons that curates practical rowing
-          knowledge, links trusted sources, and helps athletes, coaches, and
-          enthusiasts build on what already exists.
+          ReadyAll brings together practical data and knowledge, useful apps and
+          tools, and shared standards like RWN so athletes, coaches, and rowing
+          enthusiasts can build from the same foundation.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <LcEntryLink
@@ -39,22 +39,19 @@ export default function Home() {
       </section>
 
       <section className="mt-14 rounded-2xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-950">
-        <h2 className="text-2xl font-semibold">Core platform pillars</h2>
+        <h2 className="text-2xl font-semibold">Core ReadyAll pillars</h2>
         <p className="mt-3 max-w-3xl text-neutral-600 dark:text-neutral-400">
-          These are the core pieces we&apos;re curating and expanding in public with the community.
+          These are the three foundations we&apos;re building in public with the community.
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <a href="/products#logbook-companion" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
-            Logbook Companion →
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/docs" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
+            Data + Knowledge (Docs, plans, physiology, technique) →
           </a>
           <a href="/rwn" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
-            Rowing Workout Notation (RWN) →
+            Standards (RWN and shared workout language) →
           </a>
-          <a href="/products#platform-components" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
-            Coaching + Team Management →
-          </a>
-          <a href="/products#erglink" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
-            Live Sessions (ErgLink) →
+          <a href="/products" className="rounded-lg border border-neutral-300 p-4 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900">
+            Apps + Tools (Logbook Companion, ErgLink, workflows) →
           </a>
         </div>
       </section>

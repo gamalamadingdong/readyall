@@ -12,12 +12,14 @@ export default function DocsPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-semibold tracking-tight">Resources</h1>
       <p className="mt-4 max-w-4xl text-neutral-600 dark:text-neutral-400">
-        This index intentionally stays focused. We are building one deep section at a time rather than shipping many shallow pages.
+        This is the data and knowledge pillar of ReadyAll: practical documentation
+        that stays deep, structured, and useful for real rowing workflows.
       </p>
 
       <div className="mt-6 rounded-lg border border-neutral-200 p-4 dark:border-neutral-800">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          Public reading is open. RWN is complete; Training & Physiology is the active build track.
+          Public reading is open. RWN is complete, Training & Physiology is the
+          active build track, and both stay aligned with ReadyAll standards and apps.
         </p>
       </div>
 

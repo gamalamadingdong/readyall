@@ -74,6 +74,51 @@ export function RwnIntegratedReference() {
       ) : (
         <div className="mt-8 space-y-8">
           <section className="tb-soft-card rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+            <h3 className="text-lg font-semibold">Why RWN</h3>
+            <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+              Rowing already has strong informal workout shorthand, but teams and apps still use slightly
+              different syntax. RWN keeps the notation coaches already understand while making it
+              predictable enough for software to parse, validate, and execute.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div className="rounded-lg border border-neutral-300 p-4 dark:border-neutral-700">
+                <h4 className="text-sm font-medium">Shared language across teams</h4>
+                <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+                  Use one readable format for athletes, coaches, and planners instead of rewriting
+                  workouts per tool or spreadsheet.
+                </p>
+              </div>
+              <div className="rounded-lg border border-neutral-300 p-4 dark:border-neutral-700">
+                <h4 className="text-sm font-medium">Reliable tooling and automation</h4>
+                <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+                  Structured syntax enables parser validation, canonical names, and template workflows in
+                  Logbook Companion.
+                </p>
+              </div>
+              <div className="rounded-lg border border-neutral-300 p-4 dark:border-neutral-700">
+                <h4 className="text-sm font-medium">Interoperability as a standard</h4>
+                <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+                  A lightweight open standard makes it easier to share plans between apps, communities,
+                  and future integrations.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-lg border border-neutral-300 p-4 dark:border-neutral-700">
+              <h4 className="text-sm font-medium">Quick before/after example</h4>
+              <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                <p className="rounded-md border border-neutral-200 p-3 text-xs text-neutral-600 dark:border-neutral-800 dark:text-neutral-400">
+                  <span className="font-medium text-neutral-800 dark:text-neutral-200">Informal:</span>{' '}
+                  4 by 500, 1 minute rest, 2k pace ish
+                </p>
+                <p className="rounded-md border border-neutral-200 p-3 font-mono text-xs text-emerald-600 dark:border-neutral-800 dark:text-emerald-400">
+                  4x500m/1:00r@2k
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="tb-soft-card rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
             <h3 className="text-lg font-semibold">1. Basic Structure</h3>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               <div className="rounded-lg border border-neutral-300 p-4 dark:border-neutral-700">

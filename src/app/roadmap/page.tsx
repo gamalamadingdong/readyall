@@ -3,7 +3,7 @@ import { StrategicRoadmap } from "@/components/StrategicRoadmap";
 
 export const metadata: Metadata = {
   title: "Roadmap — ReadyAll",
-  description: "See what is planned, in progress, and shipped with community-informed prioritization.",
+  description: "See what is planned, in progress, and shipped across ReadyAll's knowledge, apps/tools, and standards pillars.",
 };
 
 export default function RoadmapPage() {
@@ -11,8 +11,9 @@ export default function RoadmapPage() {
     <div className="mx-auto max-w-7xl px-6 py-16">
       <h1 className="text-3xl font-bold">Roadmap</h1>
       <p className="mt-4 text-neutral-600 dark:text-neutral-400">
-        What we&apos;re building and where we&apos;re headed. This roadmap and backlog
-        stay public for full transparency and are shaped by ReadyAll community input.
+        This roadmap shows what we&apos;re building across ReadyAll&apos;s three pillars:
+        data and knowledge resources, apps and tools, and shared standards like RWN.
+        The roadmap and backlog stay public and are shaped by community input.
       </p>
 
       <div className="mt-12">
