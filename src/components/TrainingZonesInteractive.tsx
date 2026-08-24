@@ -9,11 +9,6 @@ function wattsFromPace(paceSeconds: number): number {
   return 2.80 / Math.pow(paceSeconds / 500, 3);
 }
 
-/** Pace (seconds per 500m) from watts */
-function paceFromWatts(watts: number): number {
-  return 500 * Math.cbrt(2.80 / watts);
-}
-
 /** Format seconds as m:ss.s */
 function formatPace(totalSeconds: number): string {
   const mins = Math.floor(totalSeconds / 60);
