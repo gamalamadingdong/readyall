@@ -110,7 +110,10 @@ export function ModeratorQueue() {
   };
 
   useEffect(() => {
-    void loadQueue();
+    // Defer to a microtask so the initial synchronous setState in loadQueue
+    // (setLoading/setMessage) does not run during the effect's synchronous phase,
+    // which react-hooks/set-state-in-effect (correctly) flags as cascading renders.
+    void Promise.resolve().then(loadQueue);
   }, []);
 
   const handleSave = async (itemId: string) => {
